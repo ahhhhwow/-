@@ -1,0 +1,19 @@
+<view class='text'>
+    <text>您捐书共{{num}}本</text>
+  </view>
+<view class="mybList">
+<view class="b-item" wx:for="{{bookList}}" >
+<text class='b-title'>{{item.title}}</text>
+<text class='b-date'>{{item.date}}</text>
+<image class='b-logo' src='{{item.logo}}'></image>
+<view class="b-body">
+<view class="b-desc">
+<text class="b-anthor">作者：{{item.author}}\n</text>
+<text class="b-publisher">出版社：{{item.publisher}}\n</text>
+<text class="b-isbn">ISBN：{{item.isbn}}\n</text>
+</view>
+</view>
+</view>
+</view>
+
+

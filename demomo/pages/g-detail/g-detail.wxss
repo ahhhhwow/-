@@ -1,0 +1,63 @@
+page{
+  background:  #f3f3f3;
+}
+.b-item{
+  background: #FFFFFF;
+  margin-top: 15rpx;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+  padding: 30rpx;
+  border: 1px solid #d0d0d0;  
+  border-radius: 10rpx;
+}
+.b-logo{
+  float:left;
+  width: 200rpx;
+  height: 250rpx;
+  margin-bottom: 20rpx;
+  border: 1px solid #d0d0d0;  
+  border-radius: 15rpx;
+}
+.b-title{
+  color: #212121;
+  font-weight: 600;
+  font-size: 40rpx;
+  line-height: 1;
+  margin-left: 30rpx;
+}
+.b-desc{
+  font-size: 28rpx;
+  line-height: 1.5;
+  margin-top: 30rpx;
+  margin-left: 280rpx;
+  margin-bottom: 30rpx;
+}
+.content{
+  font-size: 32rpx;
+  margin-top:50rpx;
+  width: 100%;
+}
+.star{
+  float: right;
+  width: 52rpx;
+  height: 52rpx;
+}
+.star1{
+  float: right;
+  width: 52rpx;
+  height: 52rpx;
+}
+.scancode{
+  display: flex;
+  flex-direction: column;
+  margin-top: 30rpx;
+  align-items: center;
+  width: 100%;
+}
+.codeicon{
+  width: 150rpx;
+  height: 150rpx;
+}
+.codetext{
+ font-size: 32rpx;
+}

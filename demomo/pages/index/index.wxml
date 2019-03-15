@@ -1,0 +1,31 @@
+<view class="search">
+  <view class="search-panel">   
+      <view class='search-input' bindtap="suo">  
+         <input class="wanted-books"  disabled placeholder="搜索想要的书籍" value="{{searchValue}}"/>  
+      </view> 
+  </view>
+  <view class="recommend">
+  <view class='text'>
+    <text>热门赠书榜</text>
+  </view>
+  <view class="b-item" wx:for="{{bookList}}" bindtap='toDetail' data-index= '{{index}}'>
+      <text class='b-title'>{{item.title}}</text>
+      <image class='star' wx:if='{{item.selected}}' catchtap='onCollectionTap'  data-index= '{{index}}' src='/image/2f.png'></image>
+      <image class='star1' wx:else catchtap='onCollectionTap'  data-index= '{{index}}' src='/image/2.png'></image>
+      <image class='b-logo' src='{{item.logo}}'></image>
+      <view class="b-body">
+      <view class="b-desc">
+        <text class="b-anthor">作者：{{item.author}}\n</text>
+        <text class="b-publisher">出版社：{{item.publisher}}\n</text>
+        <text class="b-isbn">ISBN：{{item.isbn}}\n</text>
+        <text class="b-amout">库存：{{item.amout}},\t</text>
+        <text class="star-n">{{item.starnum}}人加入心愿单</text>
+      </view>
+      </view>
+  </view>
+</view>
+
+</view>   
+
+
+

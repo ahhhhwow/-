@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>考勤配置</title>
+    <style>
+        *{
+            text-align: center;
+        }
+        button {
+            display: inline-block;
+            width:90%;
+            margin-top:2%;
+            padding: 10px 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: rgb(47, 99, 49);
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+
+        button:hover {background-color: #3e8e41}
+
+        button:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+    </style>
+    <script>
+        function loadDefault(){
+        var param={
+            action:'loadDefault'
+        }
+        runTool(param,function(result){
+            var myjsonarray=eval(result);    
+            alert(myjsonarray[0].wifilist[0].wifiname);
+            for(i=0;i<myjsonarray.length;i++)
+            {
+                var newbotton=document.createElement("button");
+                newbotton.innerHTML=myjsonarray[i].place.placename;
+                newbotton.setAttribute("index",i);
+                newbotton.onclick=function(){update(this);};
+                document.body.appendChild(newbotton);
+            }
+        },function(result){})
+        }
+        function update(var1){
+            alert("index:"+var1.getAttribute(index));
+        }
+    </script>
+</head>
+<body>
+    <script>setTimeout(loadDefault,3000)</script>
+    <button>添加配置</button>
+</body>
+</html>

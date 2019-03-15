@@ -1,0 +1,49 @@
+/* pages/home/home.wxss */
+page{
+  background-color: black;
+  height: 100%;
+}
+.home{
+
+}
+.hide{
+display: none;
+}
+.show{
+display: block;
+}
+.card {
+	display: flex;
+	flex-direction: column;
+  width: 100%;
+	align-items: center;
+}
+.info-icon{
+  margin-top: 50rpx;
+  width: 300rpx;
+  height: 300rpx;
+}
+
+.input{
+    padding-left: 10px;
+    height: 44px;
+}
+.inputView{
+    border-bottom: 1.5px solid white;
+    width: 400rpx;
+    height: 70rpx;
+    margin-top: 30px;
+}
+.card button{
+    opacity: 0.8;
+    width: 200rpx;
+    border:  1px ;
+    border-radius: 40px;
+    margin-top: 30px;
+    align-content: center
+}
+.in_button{
+    border:  1px ;
+    margin-top: 30px;
+    align-content: center
+}

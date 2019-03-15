@@ -1,0 +1,55 @@
+/* pages/infor/infor.wxss */
+page{
+  height: 100%;
+  background-color: #479de6;
+}
+.user-info{
+  width: 100%;
+  height: 100%;
+}
+.part1 {
+	display: flex;
+	flex-direction: column;
+  width: 100%;
+  height: 400rpx;
+	align-items: center;
+}
+.info-avatar {
+	width: 150rpx;
+  height: 150rpx;
+  border: 0 solid #ff0000;
+  border-radius: 100rpx;
+  margin-top: 200rpx;
+}
+.part2 {
+	display: flex;
+	flex-direction: column;
+  width: 100%;
+	align-items: center;
+  height: 100%;
+  margin-top: 50rpx;
+}
+.grade{
+  border-bottom: 1px solid white;  
+}
+.grade text{
+  background-color: white;
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+}
+.college{
+  border-bottom: 1px solid white;
+}
+.college text{
+  background-color: white;
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+}
+.phoneNumber{
+  border-bottom: 1px solid white;
+}
+.phoneNumber text{
+  background-color: white;
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+}

@@ -1,0 +1,29 @@
+<!--pages/home/home.wxml-->
+<view class='home'>
+  <view class='card'>
+  <image class='info-icon' src='/image/icon.png'></image>
+  <view style="opacity:{{opacity1}}">
+  <view  class="inputView ">
+      <picker bindchange="bindPickerChange_c" value="{{index}}" range="{{array_c}}">
+      <view class="picker"  style='color:white;text-align:center'>
+      {{college}}
+      </view>
+    </picker>
+  </view>
+  <view class="inputView" >
+   
+    <picker bindchange="bindPickerChange"  value="{{index}}" range="{{array}}">
+      <view class="picker" style='color:white;text-align:center'>
+      {{grade}}
+      </view>
+    </picker>
+  </view>
+  <view  class="inputView" >
+      <input class="input" placeholder="手机号码" placeholder-style='color:white;text-align:center' style='color:white;text-align:center'text-align:center' bindinput="listenerPhoneInput"/>
+  </view>
+  <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">授权</button>
+  <button   bindtap="listenerLogin">提交</button>
+  </view>
+  </view>
+  <view><button class='in_button' style="opacity:{{opacity2}}" bindtap='toIndex'>进入</button></view>
+</view>

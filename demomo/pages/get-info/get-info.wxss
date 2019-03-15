@@ -1,0 +1,57 @@
+/* pages/getbook/getbook.wxss */
+page{
+  background:  #f3f3f3;
+}
+.text{
+  margin-left: 20rpx;
+}
+.mybList{
+
+}
+.b-date{
+  float: right;
+  font-size: 24rpx;
+  color: #9a9a9a;
+  line-height: 1.2;
+}
+.booktext{
+  float: left;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+/*ietms-list*/
+.items-list{
+
+}
+.b-item{
+  padding: 30rpx;
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  background: #FFFFFF;
+  border: 1px solid #d0d0d0;  
+  border-radius: 10rpx;
+}
+.b-logo{
+  float:left;
+  width: 140rpx;
+  height: 160rpx;
+}
+.b-body{
+    margin-left: 210rps;
+}
+.b-title{
+  margin-left: 60rpx;
+  color: #212121;
+  font-size: 34rpx;
+  line-height: 1;
+}
+
+.b-desc{
+  font-size: 24rpx;
+  color: #9a9a9a;
+  line-height: 1.2;
+  margin-left: 230rpx;
+}
+
+/* pages/get-info/get-info.wxss */

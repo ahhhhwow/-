@@ -1,0 +1,16 @@
+  <view class='user'>
+    <view class='user-card' style="background-image: url('/image/info-bg.jpg');">
+    <view class='user-info' >
+      <image class='info-avatar' src='{{avatarUrl}}'></image>
+      <text class='nickName'>{{nickName}}</text>
+    </view>
+    </view>
+    <view class='info-list'>
+      <view class='info-item' wx:for="{{item}}" bindtap="{{item.toNext}}">
+         <image class='item-icon' src='{{item.icon}}'></image>
+         <text class='item-text'>{{item.text}}</text>
+         <image class='item-arrow' src='{{item.arrow}}'></image>
+      </view>
+    </view>
+   
+  </view>

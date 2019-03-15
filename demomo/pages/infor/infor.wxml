@@ -1,0 +1,12 @@
+<!--pages/infor/infor.wxml-->
+<view class='user-info'>
+  <view class='part1'>
+  <image class='info-avatar' src='{{avatarUrl}}'></image>
+  <text class='nickName'>{{nickName}}</text>
+  </view>
+  <view class='part2'>
+  <view><text class='grade'>年级：{{grade}}\n</text></view>
+  <view><text class='college'>学院：{{college}}</text></view>
+  <view><text class='phoneNumber'>电话：{{phoneNumber}}</text></view>
+  </view>
+</view>

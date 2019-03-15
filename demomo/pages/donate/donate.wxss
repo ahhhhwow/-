@@ -1,0 +1,90 @@
+page{
+  background: #f3f3f3;
+}
+.cart-list{
+  margin-bottom: 95rpx;
+}
+.scan{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 300rpx;
+	align-items: center;
+  margin-left: 20rpx;
+  margin-right: 30rpx;
+}
+.codeicon{
+  width: 150rpx;
+  height: 150rpx;
+  margin-top: 50rpx;
+  margin-bottom: 10rpx;
+}
+.scan-do{
+  margin-bottom: 10rpx;
+}
+
+.cart-item{
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  background: #FFFFFF;
+  margin-top: 10rpx;
+  padding: 30rpx;
+  border: 1px solid #d0d0d0;  
+  border-radius: 10rpx;
+  margin-bottom: 10rpx;
+}
+.b-logo{
+  float:left;
+  width: 120rpx;
+  height: 150rpx;
+}
+
+.b-title{
+  color: #212121;
+  font-size: 34rpx;
+  line-height: 1;
+  margin-left: 30rpx;
+}
+.b-desc{
+  font-size: 24rpx;
+  color: #9a9a9a;
+  line-height: 1.2;
+  margin-left: 230rpx;
+}
+.b-amount{
+  float: right;
+  color: #212121;
+  font-size: 34rpx;
+  line-height: 1;
+  margin-right: 30rpx;
+}
+.b-desc image{
+  float: right;
+  width: 50rpx;
+  height:50rpx;
+}
+.cart-item icon{
+  float: left;
+  margin-top: 60rpx;
+  margin-right: 10rpx;
+}
+.cart-footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 90rpx;
+    line-height: 90rpx;
+    background: #303030;
+    color: black;
+  
+}
+.certain{
+  float: right;
+  margin-right: 20rpx;
+}
+.cart-footer icon{
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+

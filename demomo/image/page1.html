@@ -1,0 +1,242 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>考勤设置</title>
+    <link rel="stylesheet" href="https://cache.amap.com/lbs/static/main1119.css"/>
+    <script type="text/javascript"
+            src="https://webapi.amap.com/maps?v=1.4.8&key=您申请的key值&plugin=AMap.Autocomplete"></script>
+    <script type="text/javascript" src="https://cache.amap.com/lbs/static/addToolbar.js"></script>
+    <style>
+    *{
+        text-align: center;
+    }
+    body{
+        background-color: darkgrey;
+    }
+    #div1{
+        margin-top: 1rem;
+    }
+    .button {
+    display: inline-block;
+    width:90%;
+    margin-top:2%;
+    padding: 10px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: rgb(47, 99, 49);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    }
+
+    .button:hover {background-color: #3e8e41}
+
+    .button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+    }
+    span{
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    input {
+        width: 100%;
+        height: 2rem;
+        text-align: center;
+        border: 3px solid #999;
+        border-radius: 12px;
+    }
+    #container{
+        position: fixed;
+        width: 80%;
+        height: 50%;
+        z-index: 25;
+        margin:auto;left:0; right:0; top:0; bottom:0;
+        display:none;
+    }
+    #bg{
+        position: fixed;
+        z-index: 20;
+        width: 100%;
+        height: 100%;
+        margin:auto;left:0; right:0; top:0; bottom:0;
+        background-color: #666;
+        display:none;
+    }
+    #search{
+        position: fixed;
+        z-index: 28;
+        margin:auto;left:0; right:0; top:0;
+        display:none;
+    }
+    #choose{
+        position: fixed;
+        z-index: 28;
+        margin:auto;left:5%; right:5%; bottom:15%;
+        display:none;
+    }
+</style>
+    <script type="text/javascript">
+    var lastmarker=[];
+    var lng;
+    var lat;
+    function load(){
+
+    }
+    function getEnvironmentParam2(name){
+        var reg = new RegExp('(^|&)'+ name +'=([^&]*)(&|$)');
+        var r = window.location.search.substr(1).match(reg);
+        if (r!=null) return r[2]; return '';
+    }
+    function showmap(){
+        document.getElementById("container").style.display="block";
+        document.getElementById("bg").style.display="block";
+        document.getElementById("search").style.display="block";
+        document.getElementById("choose").style.display="block";
+        var map = new AMap.Map('container', {
+            resizeEnable: true,
+            zoom:18,
+        });
+        function addMarker(a,b){
+            marker = new AMap.Marker({
+                icon: "https://webapi.amap.com/theme/v1.3/markers/n/mark_b.png",
+                position: [a, b]
+            });
+            marker.setMap(map);
+            lastmarker.push(marker);
+        }
+        var clickEventListener = map.on('click', function(e) {
+            map.remove(lastmarker);
+            addMarker(e.lnglat.getLng() ,e.lnglat.getLat());
+            lng=e.lnglat.getLng();
+            lat=e.lnglat.getLat();
+        });
+        var auto = new AMap.Autocomplete({
+            input: "tipinput"
+        });
+        AMap.event.addListener(auto, "select", select);//注册监听，当选中某条记录时会触发
+        function select(e) {
+            if (e.poi && e.poi.location) {
+                map.setZoom(15);
+                map.setCenter(e.poi.location);
+            }
+        };
+         geolocation = null,
+        geocoder = null
+
+      // 加载地理位置编码插件
+      AMap.service('AMap.Geocoder', function() { //回调函数
+        //实例化Geocoder
+        geocoder = new AMap.Geocoder({
+          city: "010" //城市，默认：“全国”
+        });
+        //TODO: 使用geocoder 对象完成相关功能
+      });
+      // 加载定位插件
+      map.plugin('AMap.Geolocation', function() {
+        // 初始化定位插件
+        geolocation = new AMap.Geolocation({
+          enableHighAccuracy: true, //是否使用高精度定位，默认:true
+          timeout: 10000, //超过10秒后停止定位，默认：无穷大
+          maximumAge: 0, //定位结果缓存0毫秒，默认：0
+          convert: true, //自动偏移坐标，偏移后的坐标为高德坐标，默认：true
+          showButton: true, //显示定位按钮，默认：true
+          buttonPosition: 'LB', //定位按钮停靠位置，默认：'LB'，左下角
+          buttonOffset: new AMap.Pixel(10, 20), //定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
+          showMarker: false, //定位成功后在定位到的位置显示点标记，默认：true
+          showCircle: false, //定位成功后用圆圈表示定位精度范围，默认：true
+          panToLocation: true, //定位成功后将定位到的位置作为地图中心点，默认：true
+          zoomToAccuracy: true //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+        });
+        // 把定位插件加入地图实例
+        map.addControl(geolocation);
+
+        // 添加地图全局定位事件
+        AMap.event.addListener(geolocation, 'complete', onComplete); //返回定位信息
+        AMap.event.addListener(geolocation, 'error', onError); //返回定位出错信息
+
+        // 调用定位
+        geolocation.getCurrentPosition();
+      });
+    }
+    function chooseThisPoint(){
+        document.getElementById("container").style.display="none";
+        document.getElementById("bg").style.display="none";
+        document.getElementById("search").style.display="none";
+        document.getElementById("choose").style.display="none";
+    }
+    function back(){
+        var param = {
+            action: 'back',
+        };
+        runTool(param,function(result){},function(result){});
+    }
+    function useThisWifi(){
+        var param = {
+            action: 'useThisWifi',
+        };
+        runTool(param,function(result){document.getElementById("wifimessage").value=result;},function(result){});
+    }
+    function changeDefault(){
+        var ontime = document.getElementById('ontime').value;
+        var offtime = document.getElementById('offtime').value;
+        var wifimessage = document.getElementById('wifimessage').value;
+        var placename = document.getElementById('placename').value;
+        var param = {
+            action: 'changeDefault',
+            ontime: ontime,
+            offtime: offtime,
+            wifimessage: wifimessage,
+            placename: placename,
+            lat:lat,
+            lng:lng
+        };
+        runTool(param,function(result){},function(result){});
+    }
+</script>
+</head>
+<body onload="load()">
+<div>
+    <h1>考勤设置</h1>
+    <div>
+        <span>上班时间:</span>
+        <input type="time" id="ontime" placeholder="请输入上班时间格式HH:mm:ss" />
+    </div>
+    <div>
+        <span>下班时间:</span>
+        <input type="time" id="offtime" placeholder="请输入下班时间格式HH:mm:ss" />
+    </div>
+    <div>
+        <span>Wifi设置:</span>
+        <input id="wifimessage" type="text" placeholder="请输入wifiip"/>
+    </div>
+    <div>
+        <button class="button" onclick="useThisWifi()">使用当前wifi</button>
+    </div>
+    <div id="div1">
+        <span>地点设置:</span>
+        <input  type="text" id="placename" placeholder="请输入地点名称" />
+        <span>GPS经纬度:<br/></span>
+        <button class="button" onclick="showmap()">地图选点</button>
+    </div>
+    <div>
+        <button class="button" onclick="changeDefault()">确认修改</button>
+    </div>
+</div>
+<div>
+    <button class="button" onclick="back()">返回首页</button>
+</div>
+<div id="search"><input type="text" placeholder="请输入关键字进行搜索" id="tipinput"></div>
+<div id="container"></div>
+<div id="choose"><button class="button" onclick="chooseThisPoint()">确认</button></div>
+<div id="bg"></div>
+</body>
+</html>

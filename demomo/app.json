@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/donate/donate",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/getresult/getresult",
+    "pages/getbook/getbook",
+    "pages/search/search",
+    "pages/detail/detail",
+    "pages/do-info/do-info",
+    "pages/infor/infor",
+    "pages/get-info/get-info",
+    "pages/scan-result/scan-result",
+    "pages/g-detail/g-detail",
+    "pages/serresult/serresult"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#303030",
+    "navigationBarTitleText": "软软借书",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "selectedColor": "#303030",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "image/1.png",
+        "selectedIconPath": "image/1f.png"
+      },
+      {
+        "pagePath": "pages/getbook/getbook",
+        "text": "收藏",
+        "iconPath": "image/2.png",
+        "selectedIconPath": "image/2f.png"
+      },
+      {
+        "pagePath": "pages/donate/donate",
+        "text": "捐书",
+        "iconPath": "image/3.png",
+        "selectedIconPath": "image/3f.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "用户",
+        "iconPath": "image/4.png",
+        "selectedIconPath": "image/4f.png"
+      }
+    ]
+  }
+}

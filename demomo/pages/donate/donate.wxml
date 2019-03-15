@@ -1,0 +1,34 @@
+<view class='donate'>
+  <view class='scan'>
+    <image class='codeicon' src='/image/code.png' bindtap='toResult'></image>
+    <text class='scan-do'>扫码捐书</text>
+  </view>
+  <view class='cart-list'>
+    <view class='cart-item' wx:for="{{carts}}">
+      <icon wx:if="{{item.selected}}"  type="success_circle" size="20" bindtap="selectList" data-index="{{index}}"/>
+      <icon wx:else type="circle" size="20" bindtap="selectList" data-index="{{index}}"/>
+      <text class='b-title'>{{item.title}}</text>
+      <view class='b-amount'>
+          <text bindtap="minusCount" data-index="{{index}}">-\t</text>
+          <text>{{item.num}}\t</text>
+          <text bindtap="addCount" data-index="{{index}}">+</text>
+     </view>
+      <image class='b-logo' src='{{item.logo}}'></image>
+      <view class='b-desc'>
+          <text class='b-anthor'>作者：{{item.author}}\n</text>
+          <text class='b-publisher'>出版社：{{item.publisher}}\n</text>
+          <text class='b-isbn'>ISBN：{{item.isbn}}</text>
+          <image  src='/image/删除.png' bindtap="deleteList" data-index="{{index}}">  </image>
+     </view>
+    </view>
+  </view>
+  <view class="cart-footer">
+    <icon wx:if="{{isAllSelected}}" type="success_circle" size="20"  bindtap="selectAll"/>
+    <icon wx:else type="circle" size="20" bindtap="selectAll" /> 
+    <text style='color:white;'>\t全选</text>
+    <text style='color:white;'>\t\t\t共\t{{totalNum}}\t本\t</text>
+    <text style='color:white;' class='certain' bindtap="doCertain">立即确认</text>
+     
+ </view>
+</view>
+

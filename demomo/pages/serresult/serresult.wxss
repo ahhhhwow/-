@@ -1,0 +1,51 @@
+/* pages/serresult/serresult.wxss */
+.recommend{
+  margin-top:85rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx; 
+}
+.booktext{
+  float: left;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.b-item{
+  background: #FFFFFF;
+  margin-top: 10rpx;
+  padding: 30rpx;
+ border: 1px solid #d0d0d0;  
+  border-radius: 10rpx;
+  margin-bottom: 10rpx;
+}
+.b-logo{
+  float:left;
+  width: 170rpx;
+  height: 170rpx;
+  margin-bottom: 10rpx;
+}
+.b-title{
+  color: #212121;
+  font-size: 34rpx;
+  line-height: 1;
+  margin-left: 60rpx;
+}
+.b-desc{
+  font-size: 24rpx;
+  color: #9a9a9a;
+  line-height: 1.2;
+  margin-left: 230rpx;
+}
+.footer{
+  overflow: hidden;
+}
+.star{
+  float: right;
+  width: 52rpx;
+  height: 52rpx;
+}
+.star1{
+  float: right;
+  width: 52rpx;
+  height: 52rpx;
+}

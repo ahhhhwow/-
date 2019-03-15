@@ -1,0 +1,23 @@
+<view class='detail'>
+  <view class="b-item"  >
+    <text class='b-title'>{{title}}</text>
+    <image class='star' wx:if='{{selected}}' catchtap='onCollectionTap' src='/image/2f.png'></image>
+    <image class='star1' wx:else bindtap='onCollectionTap'   src='/image/2.png' ></image>
+    <image class='b-logo' src='{{logo}}'></image>
+        <view class='b-desc'>
+          <text class='b-anthor'>作者：{{author}}\n</text>
+          <text class='b-publisher'>出版社：{{publisher}}\n</text>
+          <text class='b-isbn'>ISBN：{{isbn}}\n</text>
+          <text class='b-amout'>库存：{{amout}},</text>
+          <text class="star-n">共{{starnum}}人加入心愿单</text>
+        </view>
+    <view class='content'>
+       <text class='b-content'>内容提要：\n{{content}}</text>
+    </view>
+    <view class='scancode'>
+      <image class='codeicon' src='/image/code.png' bindtap='toScan'></image>
+      <text class='codetext'>扫码领取</text>
+    </view>
+  </view>
+</view>
+

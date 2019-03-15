@@ -1,0 +1,21 @@
+<!--pages/scan-result/scan-result.wxml-->
+<view class='scan-result'>
+  <view class='result-info'>
+    <text >您已经扫描成功!请近期将书籍放在捐赠点。</text>
+  </view>
+  <view class="b-item"  >
+    <text class='b-title'>{{title}}</text>
+    <image class='b-logo' src='{{logo}}'></image>
+      <view class='b-desc'>
+        <text class='b-anthor'>作者：{{author}}\n</text>
+        <text class='b-publisher'>出版社：{{publisher}}\n</text>
+        <text class='b-isbn'>ISBN：{{isbn}}\n</text>
+    </view>
+  </view>
+  <view class='send-m'> 
+    <text class='ques'>感谢您的爱心与支持！\n</text>
+    <image src='/image/thank.jpg'></image>
+    <view class='thanks-y' bindtap='another'><text>再捐一本</text></view>
+    <view class='thanks-n' bindtap='nodonate'><text>返回主页</text></view>
+  </view>
+</view>

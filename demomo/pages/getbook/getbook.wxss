@@ -1,0 +1,72 @@
+/* pages/getbook/getbook.wxss */
+page{
+  background: #f3f3f3;
+}
+.booktext{
+  float: left;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+/*ietms-list*/
+.items-list{
+
+}
+.b-item{
+  background: #FFFFFF;
+  ovweflow:hidden;
+  padding: 30rpx;
+  margin-top: 10rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  border: 1px solid #d0d0d0;  
+  border-radius: 10rpx;
+  margin-bottom: 10rpx;
+}
+.b-logo{
+  float:left;
+  width: 140rpx;
+  height: 190rpx;
+}
+.b-body{
+    margin-left: 210rps;
+}
+.b-title{
+  margin-left: 30rpx;
+  color: #212121;
+  font-size: 34rpx;
+  line-height: 1;
+}
+.star{
+  float: right;
+  width: 52rpx;
+  height: 52rpx;
+}
+.b-desc{
+  font-size: 24rpx;
+  color: #9a9a9a;
+  line-height: 1.2;
+  margin-left: 230rpx;
+}
+.b-amont{
+  white-space: emsp;
+}
+.b-star image{
+  width: 100%;
+  height: 100%;
+}
+.code{
+  float: right;
+  width: 52rpx;
+  height: 52rpx;
+}
+.star{
+  float: right;
+  width: 52rpx;
+  height: 52rpx;
+}
+.star1{
+  float: right;
+  width: 52rpx;
+  height: 52rpx;
+}
+
